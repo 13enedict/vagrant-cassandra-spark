@@ -1,8 +1,11 @@
+- name: add java repository
+  apt_repository: repo='ppa:openjdk-r/ppa' state=present
+
 - name: install java
-  apt: name=openjdk-7-jre state=present update_cache=yes
+  apt: name=openjdk-8-jre state=present update_cache=yes
 
 - name: add cassandra debian repository
-  apt_repository: repo='deb http://www.apache.org/dist/cassandra/debian 21x main' state=present
+  apt_repository: repo='deb http://www.apache.org/dist/cassandra/debian 30x main' state=present
 
 - name: add the key for the cassandra debian repo
   apt_key: keyserver=pgp.mit.edu id=F758CE318D77295D
